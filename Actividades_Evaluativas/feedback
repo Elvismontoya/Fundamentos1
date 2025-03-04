@@ -1,0 +1,11 @@
+
+Punto 1: OK
+Punto 2: OK
+PUNTO 3: 
+Observación: Calcular_Cuadrado() devuelve dos valores (área y perímetro), pero el código lo almacena en una sola variable cuadrado_area, lo que genera un problema en la impresión.
+Corrección:
+area, perimetro = Calcular_Cuadrado(lado_cuadrado)
+print(f"El área del cuadrado es: {area}")
+print(f"El perímetro del cuadrado es: {perimetro}")
+
+NOTA: 4.5

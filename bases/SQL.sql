@@ -58,3 +58,35 @@ JOIN Detalle_Pedido ON Productos.ID_Producto = Detalle_Pedido.ID_Productos
 JOIN Pedidos ON Pedidos.ID_Pedido = Detalle_Pedido.ID_Pedidos;
 
 
+import  sqlite3
+
+conexion=sqlite3.connect("Datos.db")
+
+with sqlite3.connect("bd1.db") as conexion:
+    # Conexion.execute("""CREATE TABLE IF NOT EXISTS articulos(
+    #                 ID INTEGER PRIMARY KEY AUTOINCREMENT,
+    #                 Nombre TEXT,
+    #                 Correo_Electronico TEXT,
+    #                 Telefono NUMERIC
+    #                 )""")
+    
+    # conexion.execute("""CREATE TABLE IF NOT EXISTS Personas(
+    #                 ID INTEGER PRIMARY KEY AUTOINCREMENT,
+    #                 Nombre TEXT,
+    #                 Correo_Electronico TEXT,
+    #                 Telefono TEXT
+    #                 )""")
+    
+    
+    # datos=[("Elvis","elvisam@56","320518564")]
+    # conexion.executemany("INSERT INTO Personas(Nombre, Correo_Electronico, Telefono) VALUES (?,?,?)", datos)
+    # conexion.commit()
+
+    # datos=[("Camilo","cccc1","3205145654")]
+    # conexion.executemany("INSERT INTO Personas(Nombre, Correo_Electronico, Telefono) VALUES (?,?,?)", datos)
+    # conexion.commit()
+
+    cursor= conexion.execute("SELECT ID, Nombre, Correo_Electronico, Telefono FROM Personas")
+    filas= cursor.fetchall()
+    for fila in filas:
+        print(fila)
